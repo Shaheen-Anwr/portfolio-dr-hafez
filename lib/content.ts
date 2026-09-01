@@ -745,7 +745,7 @@ export const ui: Record<Locale, {
     note: string;
     direct: string;
   };
-  footer: { builtWith: string; rights: string };
+  footer: { rights: string };
 }> = {
   en: {
     langName: "EN",
@@ -838,7 +838,7 @@ export const ui: Record<Locale, {
       note: "Opens your mail app with the message pre-filled.",
       direct: "Direct",
     },
-    footer: { builtWith: "Designed & built with Next.js", rights: "All rights reserved." },
+    footer: { rights: "All rights reserved." },
   },
   ar: {
     langName: "ع",
@@ -931,7 +931,7 @@ export const ui: Record<Locale, {
       note: "يفتح تطبيق البريد لديك مع تعبئة الرسالة مسبقًا.",
       direct: "مباشر",
     },
-    footer: { builtWith: "", rights: "جميع الحقوق محفوظة." },
+    footer: { rights: "جميع الحقوق محفوظة." },
   },
 };
 

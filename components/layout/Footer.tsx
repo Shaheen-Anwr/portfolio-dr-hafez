@@ -59,7 +59,6 @@ export function Footer() {
             © {year} {pick(profile.name)}. {t.footer.rights}
           </p>
           <div className="flex items-center gap-4">
-            <span>{t.footer.builtWith}</span>
             <a href="#top" className="inline-flex items-center gap-1 text-muted transition-colors hover:text-ink">
               {t.backToTop}
               <IconArrowUpRight className="h-3.5 w-3.5" />
