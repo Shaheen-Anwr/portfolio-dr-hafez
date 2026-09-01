@@ -931,7 +931,7 @@ export const ui: Record<Locale, {
       note: "يفتح تطبيق البريد لديك مع تعبئة الرسالة مسبقًا.",
       direct: "مباشر",
     },
-    footer: { builtWith: "صُمم وطُوّر باستخدام Next.js", rights: "جميع الحقوق محفوظة." },
+    footer: { builtWith: "", rights: "جميع الحقوق محفوظة." },
   },
 };
 
