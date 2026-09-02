@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. Hafez Mohamed Farid — Curriculum Vitae</title>
+<style>
+  /* ============================================================ page setup */
+  @page {
+    size: A4;
+    margin: 13mm 15mm 12mm;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:        #14181f;
+    --ink-soft:   #232a33;
+    --body:       #3c4552;
+    --muted:      #6a7480;
+    --faint:      #8b95a1;
+    --teal:       #0d9488;
+    --teal-deep:  #0f6f68;
+    --gold:       #a9791f;
+    --line:       #e2e5ea;
+    --line-soft:  #eef0f3;
+    --chip-bd:    #d8dce2;
+    --panel:      #f7f8f9;
+  }
+
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  body {
+    font-family: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 9.6px;
+    line-height: 1.5;
+    color: var(--body);
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Screen preview only — print uses @page margins */
+  @media screen {
+    body { background: #4a4f57; padding: 28px 0; }
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 14mm 15mm 15mm;
+      background: #fff;
+      box-shadow: 0 8px 40px rgba(0,0,0,.35);
+    }
+  }
+
+  .mono {
+    font-family: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+  }
+
+  /* ================================================================ header */
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .head h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    line-height: 1.05;
+  }
+  .head .role {
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--teal);
+  }
+  .head .tagline {
+    margin-top: 6px;
+    font-size: 8.7px;
+    color: var(--muted);
+    max-width: 118mm;
+    line-height: 1.45;
+  }
+
+  .mark { flex: 0 0 auto; width: 40px; height: 40px; color: var(--teal); }
+
+  /* contact strip */
+  .contact {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    font-size: 8.2px;
+    color: var(--ink-soft);
+  }
+  .contact span { display: inline-flex; align-items: center; }
+  .contact span::after {
+    content: "";
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background: var(--chip-bd);
+    margin: 0 9px;
+  }
+  .contact span:last-child::after { display: none; }
+  .contact a { color: var(--ink-soft); text-decoration: none; }
+  .contact b { color: var(--faint); font-weight: 600; margin-right: 4px; letter-spacing: 0.06em; text-transform: uppercase; font-size: 7px; }
+
+  /* =============================================================== section */
+  section { margin-top: 12px; }
+  .sec-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .sec-head .n {
+    font-size: 7.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--teal);
+  }
+  .sec-head h2 {
+    font-size: 9.6px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .sec-head::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  p.summary { font-size: 9px; color: var(--body); line-height: 1.55; }
+
+  /* entries */
+  .entry {
+    margin-top: 7px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .entry:first-of-type { margin-top: 0; }
+  .entry .r1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .entry .title { font-size: 9.6px; font-weight: 650; color: var(--ink); }
+  .entry .title b { font-weight: 650; }
+  .entry .when {
+    font-size: 7.9px;
+    color: var(--muted);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+  .entry .org {
+    margin-top: 1.5px;
+    font-size: 8.7px;
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+  .entry .org .place { color: var(--muted); font-weight: 500; }
+  .entry .note {
+    margin-top: 2px;
+    font-size: 8.3px;
+    color: var(--muted);
+  }
+  ul.bul {
+    margin-top: 4px;
+    padding-left: 0;
+    list-style: none;
+  }
+  ul.bul li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 8.5px;
+    color: var(--body);
+    line-height: 1.46;
+    margin-bottom: 2px;
+  }
+  ul.bul li::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 5.5px;
+    width: 3px;
+    height: 3px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+
+  /* two-column band for compact lists */
+  .cols2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 26px;
+  }
+  .cols2 .li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 8.4px;
+    color: var(--body);
+    line-height: 1.4;
+    break-inside: avoid;
+  }
+  .cols2 .li::before {
+    content: "";
+    position: absolute;
+    left: 2px; top: 5px;
+    width: 3px; height: 3px;
+    background: var(--teal);
+    border-radius: 50%;
+  }
+  .cols2 .li b { color: var(--ink-soft); font-weight: 600; }
+  .cols2 .li .sub { color: var(--muted); }
+
+  /* chips */
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip {
+    font-size: 7.7px;
+    color: var(--ink-soft);
+    border: 0.8px solid var(--chip-bd);
+    border-radius: 4px;
+    padding: 2.5px 7px;
+    background: #fff;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .skillgrp { margin-top: 7px; break-inside: avoid; }
+  .skillgrp:first-child { margin-top: 0; }
+  .skillgrp .lbl {
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 3.5px;
+  }
+
+  /* publications */
+  ol.pubs { list-style: none; counter-reset: pub; }
+  ol.pubs li {
+    counter-increment: pub;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  ol.pubs li::before {
+    content: counter(pub, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 0.5px;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    font-size: 7.3px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  ol.pubs .t {
+    font-size: 8.6px;
+    color: var(--ink);
+    line-height: 1.42;
+  }
+  ol.pubs .m {
+    font-size: 7.9px;
+    color: var(--muted);
+    margin-top: 1.5px;
+    line-height: 1.4;
+  }
+  .tag {
+    display: inline-block;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    font-size: 6.3px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--teal-deep);
+    border: 0.8px solid #bfe4df;
+    background: #f0faf8;
+    border-radius: 3px;
+    padding: 0.5px 3.5px;
+    vertical-align: 1.5px;
+    margin-left: 5px;
+  }
+
+  .two-up {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 30px;
+    align-items: start;
+    margin-top: 10px;
+  }
+  .two-up .stack > section:first-child { margin-top: 0; }
+  .two-up section { break-inside: avoid; page-break-inside: avoid; }
+
+  .rip {
+    font-size: 8.5px;
+    color: var(--body);
+    line-height: 1.5;
+    padding: 8px 10px;
+    background: var(--panel);
+    border-left: 2px solid var(--teal);
+    border-radius: 2px;
+  }
+  .rip b { color: var(--ink); font-weight: 650; }
+
+  .avail {
+    font-size: 8.4px;
+    color: var(--body);
+    line-height: 1.5;
+  }
+  .avail b { color: var(--teal-deep); }
+
+  .langs { display: flex; gap: 28px; }
+  .langs .l .k { font-size: 8.8px; font-weight: 650; color: var(--ink); }
+  .langs .l .v { font-size: 7.9px; color: var(--muted); margin-top: 1px; }
+
+  .foot {
+    margin-top: 10px;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    font-size: 7px;
+    letter-spacing: 0.05em;
+    color: var(--faint);
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- ===================================================== HEADER -->
+  <header class="head">
+    <div>
+      <h1>Dr. Hafez Mohamed Farid<span style="font-weight:500;font-size:12px;color:var(--muted);letter-spacing:0"> &nbsp;Ph.D.</span></h1>
+      <div class="role">Assistant Professor of Business Administration &nbsp;·&nbsp; Certified Corporate Trainer</div>
+      <div class="tagline">
+        Ph.D. in Business Administration with 16 years in higher education and 10+ years designing and delivering
+        professional training across academic, governmental and corporate sectors. Research on ethical climate,
+        leadership, and human-resource sustainability.
+      </div>
+    </div>
+    <svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+      <path d="M6.6 19h10.8" stroke-width="1.4" stroke-linecap="round" stroke-dasharray="0.1 3.2" opacity="0.7"/>
+      <path d="M5.7 16.7 10 7.7" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M14 7.7 18.3 16.7" stroke-width="1.6" stroke-linecap="round"/>
+      <circle cx="12" cy="5.4" r="2.7" fill="currentColor" stroke="none"/>
+      <circle cx="4.7" cy="19" r="2.1" stroke-width="1.6"/>
+      <circle cx="19.3" cy="19" r="2.1" stroke-width="1.6"/>
+    </svg>
+  </header>
+
+  <div class="contact">
+    <span><b>Loc</b>Cairo, Egypt</span>
+    <span><b>Tel</b><a href="tel:+201155519400">+20&nbsp;115&nbsp;551&nbsp;9400</a></span>
+    <span><b>Email</b><a href="mailto:hafezkhalaf@gmail.com">hafezkhalaf@gmail.com</a></span>
+    <span><b>ORCID</b><a href="https://orcid.org/0000-0002-9057-7545">0000-0002-9057-7545</a></span>
+    <span><b>in</b><a href="https://www.linkedin.com/in/hafez-farid/">linkedin.com/in/hafez-farid</a></span>
+  </div>
+
+  <!-- ===================================================== SUMMARY -->
+  <section>
+    <div class="sec-head"><span class="n mono">01</span><h2>Professional&nbsp;Summary</h2></div>
+    <p class="summary">
+      Assistant Professor of Business Administration and Certified Trainer with 16 years of academic experience
+      in accredited higher-education institutions and over a decade of continuous professional-training delivery.
+      Specialised in Human Resource Management, Organizational Behavior, and Strategic Management, with proven
+      strength in research supervision, curriculum development, and academic quality assurance. Author of 10+
+      peer-reviewed publications and an experienced facilitator of workshops and seminars for academic,
+      governmental, and corporate audiences — including international engagements in the Gulf region.
+    </p>
+  </section>
+
+  <!-- ================================================== APPOINTMENTS -->
+  <section>
+    <div class="sec-head"><span class="n mono">02</span><h2>Academic&nbsp;Appointments</h2></div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Assistant Professor of Management</span><span class="when">2025 – Present</span></div>
+      <div class="org">Sadat Academy for Management Sciences <span class="place">· Egypt</span></div>
+      <ul class="bul">
+        <li>Teaching undergraduate and postgraduate courses in management and organizational behavior.</li>
+        <li>Supervising academic research and designing practical, skill-based learning experiences.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Assistant Professor of Management</span><span class="when">2024 – Present</span></div>
+      <div class="org">Ahram Canadian University (ACU) <span class="place">· Giza, Egypt</span></div>
+      <ul class="bul">
+        <li>Teach undergraduate Communication Skills with emphasis on real-world application.</li>
+        <li>Run workshops to strengthen students' public speaking and interpersonal communication.</li>
+        <li>Apply skill-based assessment to build presentation and negotiation ability.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Assistant Professor of Management</span><span class="when">2021 – Present</span></div>
+      <div class="org">International Academy of Engineering &amp; Media Science (IAEMS) <span class="place">· Egypt</span></div>
+      <ul class="bul">
+        <li>Deliver Organizational Behavior, Strategic Management, Innovation, and Project Management.</li>
+        <li>Contribute to curriculum development and academic quality assurance.</li>
+        <li>Lead academic workshops and publish research in international journals.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Assistant Professor of Management</span><span class="when">2020 – Present</span></div>
+      <div class="org">Arab Academy for Science, Technology &amp; Maritime Transport (AASTMT) <span class="place">· Egypt</span></div>
+      <ul class="bul">
+        <li>Teach International Business, HRM, Marketing, Negotiation, and Financial Management.</li>
+        <li>Supervise graduate research and design student-centered assessments.</li>
+        <li>Publish in peer-reviewed academic journals.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Lecturer (Full-time)</span><span class="when">2010 – 2015</span></div>
+      <div class="org">Thebes Academy <span class="place">· Cairo, Egypt</span></div>
+      <ul class="bul">
+        <li>Lectured in Management Information Systems, E-Commerce, and Decision Support Systems.</li>
+        <li>Contributed to course development and academic engagement.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================ TRAINING EXPERIENCE -->
+  <section>
+    <div class="sec-head"><span class="n mono">03</span><h2>Professional&nbsp;Training&nbsp;Experience</h2></div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Corporate Trainer — International Engagement</span><span class="when">2026</span></div>
+      <div class="org">SEEN Training <span class="place">· Saudi Arabia</span></div>
+      <ul class="bul">
+        <li>Program: <b>Smart Staffing — Improving Recruitment, Selection &amp; Retention of Employees</b>. Client: Petrogistix.</li>
+        <li>Delivered an advanced program on smart recruitment, modern selection techniques, and employee-retention strategy.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Trainer</span><span class="when">2022 – Present</span></div>
+      <div class="org">UP Skill Center <span class="place">· Egypt</span></div>
+      <ul class="bul">
+        <li>Deliver Communication Skills, Time Management, Stress Management, and Presentation Skills.</li>
+        <li>Repeated deliveries for diverse audiences of students and working professionals.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Trainer — Experts Sector</span><span class="when">2015 – 2021</span></div>
+      <div class="org">Ministry of Justice <span class="place">· Egypt</span></div>
+      <ul class="bul">
+        <li>Trained sector professionals in communication, professional skills, and workplace effectiveness.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Trainer</span><span class="when">2010 – 2015</span></div>
+      <div class="org">Al-Massa Training Center, Thebes Academy <span class="place">· Cairo, Egypt</span></div>
+      <ul class="bul">
+        <li>Delivered foundational programs in soft skills and management; prepared students for the job market.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================================================== EDUCATION -->
+  <section style="break-before:page;page-break-before:always;margin-top:0">
+    <div class="sec-head"><span class="n mono">04</span><h2>Education</h2></div>
+
+    <div class="entry">
+      <div class="r1"><span class="title">Ph.D. in Business Administration</span><span class="when">2021</span></div>
+      <div class="org">University of Sadat City <span class="place">· Egypt</span></div>
+      <div class="note">Dissertation — <i>Job Satisfaction as a Mediating Variable between Ethical Climate and Human Resource Sustainability: A Study on Egyptian Commercial Banks.</i></div>
+    </div>
+
+    <div class="cols2" style="margin-top:8px">
+      <div class="li"><b>M.Sc. in Business Administration</b><br><span class="sub">Helwan University · 2014</span></div>
+      <div class="li"><b>MBA in Financial Management</b> <span class="sub">(English Section)</span><br><span class="sub">Arab Academy for Management · 2013</span></div>
+      <div class="li"><b>Prof. Diploma — Quality &amp; Accreditation Management</b><br><span class="sub">Ain Shams University · 2015</span></div>
+      <div class="li"><b>B.A. in Management Information Systems</b><br><span class="sub">Thebes Academy · 2010 · GPA 3.86</span></div>
+    </div>
+  </section>
+
+  <!-- ================================================= PUBLICATIONS -->
+  <section>
+    <div class="sec-head"><span class="n mono">05</span><h2>Selected&nbsp;Publications</h2></div>
+    <p class="note" style="margin-bottom:7px">10+ peer-reviewed articles in HRM, ethical climate, job satisfaction, leadership, sustainability, and innovation. Titles marked <span class="tag">AR</span> were published in Arabic; English rendering shown.</p>
+    <ol class="pubs">
+      <li>
+        <div class="t">The Impact of Digital Transformation in HRM on Job Performance: an analytical study of the mediating role of operational efficiency in higher-education institutions. <span class="tag">AR</span></div>
+        <div class="m">Raya International Journal of Commercial Sciences — Raya Higher Institute for Management &amp; Foreign Trade, New Damietta · Vol. 4, Issue 14 · July 2025</div>
+      </li>
+      <li>
+        <div class="t">Knowledge Sharing as a Mediating Variable between Distributed Leadership and Sustainable Competitive Advantage — applied to Telecom Egypt employees, Menoufia. <span class="tag">AR</span></div>
+        <div class="m">Journal of Contemporary Business Studies — Faculty of Commerce, Kafr El-Sheikh University · Issue 19 · January 2025</div>
+      </li>
+      <li>
+        <div class="t">Virtuous Leadership as a Moderating Variable between Workaholism and Counterproductive Work Behaviors — applied to government-sector physicians, Beheira hospitals. <span class="tag">AR</span></div>
+        <div class="m">Journal of Contemporary Business Studies — Faculty of Commerce, Kafr El-Sheikh University · Issue 19 · January 2025</div>
+      </li>
+      <li>
+        <div class="t">Environmental Awareness as a Moderating Variable between Corporate Social Responsibility and Employees' Green Behavior — applied to Menoufia University staff. <span class="tag">AR</span></div>
+        <div class="m">Scientific Journal of Commerce and Finance — Faculty of Commerce, Tanta University · Vol. 45, Issue 1 · March 2025</div>
+      </li>
+      <li>
+        <div class="t">The Mediating Role of Brand Love between Content Credibility and E-Purchase Intention on Social Media: evidence from Toshiba El Araby customers on Facebook. <span class="tag">AR</span></div>
+        <div class="m">Scientific Journal of Commerce and Finance — Faculty of Commerce, Tanta University · Vol. 44, Issue 3 · September 2024</div>
+      </li>
+      <li>
+        <div class="t">Job Happiness as a Mediating Variable between Organizational Justice and Job Burnout: a field study on Menoufia University hospitals. <span class="tag">AR</span></div>
+        <div class="m">Scientific Journal of Commerce and Finance — Faculty of Commerce, Tanta University · Vol. 44, Issue 1 · March 2024</div>
+      </li>
+      <li>
+        <div class="t">The Role of Human Resources Sustainability in Promoting Innovation and Entrepreneurship.</div>
+        <div class="m">Academic Journal of Social Sciences — International Academy of Engineering and Media Sciences · May 2024</div>
+      </li>
+      <li>
+        <div class="t">Technological Infrastructure Investments Between Their Reflections and Motives: evidence from Arab banks.</div>
+        <div class="m">Scientific Journal of Business and Environmental Studies — Faculty of Commerce, Suez Canal University · Vol. 14, Issue 3 · July 2023</div>
+      </li>
+      <li>
+        <div class="t">The Role of Ethical Climate in Achieving Human Resource Sustainability: an applied study on Egyptian commercial banks. <span class="tag">AR</span></div>
+        <div class="m">Scientific Journal for Financial and Administrative Studies and Research — Faculty of Commerce, University of Sadat City · Vol. 9, Issue 1 · June 2021</div>
+      </li>
+      <li>
+        <div class="t">Job Satisfaction as a Mediating Variable between Ethical Climate and Human Resource Sustainability: an applied study on Egyptian commercial banks. <span class="tag">AR</span></div>
+        <div class="m">Scientific Journal for Financial and Administrative Studies and Research — Faculty of Commerce, University of Sadat City · Vol. 8, Issue 2 · December 2020</div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ============================================ RESEARCH IN PROGRESS -->
+  <section>
+    <div class="sec-head"><span class="n mono">06</span><h2>Research&nbsp;in&nbsp;Progress</h2></div>
+    <div class="rip">
+      <b>Banks' Technological Investment, Employees, and Customers: Beyond Profitability</b> — an unveiling of the Arab bank. <span class="note">(Working paper)</span>
+    </div>
+  </section>
+
+  <!-- ============================================ TEACHING & TRAINING AREAS -->
+  <section>
+    <div class="sec-head"><span class="n mono">07</span><h2>Teaching&nbsp;&amp;&nbsp;Training&nbsp;Areas</h2></div>
+    <div class="chips">
+      <span class="chip">Strategic Management</span>
+      <span class="chip">Organizational Behavior</span>
+      <span class="chip">Human Resource Management</span>
+      <span class="chip">Innovation Management</span>
+      <span class="chip">International Management</span>
+      <span class="chip">Marketing Management</span>
+      <span class="chip">Project Management</span>
+      <span class="chip">Quality Management</span>
+      <span class="chip">Entrepreneurship</span>
+      <span class="chip">Recruitment &amp; Selection</span>
+      <span class="chip">Employee Retention</span>
+      <span class="chip">Leadership Development</span>
+      <span class="chip">Communication Skills</span>
+      <span class="chip">Presentation Skills</span>
+      <span class="chip">Time &amp; Stress Management</span>
+      <span class="chip">AI in HR &amp; Smart Staffing</span>
+    </div>
+  </section>
+
+  <!-- ================================================= TWO-UP BLOCK -->
+  <div class="two-up">
+    <div class="stack">
+      <section>
+        <div class="sec-head"><span class="n mono">08</span><h2>Core&nbsp;Competencies</h2></div>
+        <div class="skillgrp">
+          <div class="lbl">Research &amp; Academic</div>
+          <div class="chips">
+            <span class="chip">Academic Research &amp; Publication</span>
+            <span class="chip">Curriculum Development</span>
+            <span class="chip">Research Supervision</span>
+            <span class="chip">Quality Assurance in Higher Ed.</span>
+            <span class="chip">Instructional Design</span>
+          </div>
+        </div>
+        <div class="skillgrp">
+          <div class="lbl">Training &amp; Delivery</div>
+          <div class="chips">
+            <span class="chip">Training &amp; Facilitation</span>
+            <span class="chip">Public Speaking &amp; Presentation</span>
+            <span class="chip">Communication &amp; Engagement</span>
+            <span class="chip">AI Applications in HR</span>
+          </div>
+        </div>
+        <div class="skillgrp">
+          <div class="lbl">Leadership &amp; Strategy</div>
+          <div class="chips">
+            <span class="chip">Strategic Thinking &amp; Problem Solving</span>
+            <span class="chip">HR &amp; Organizational Development</span>
+            <span class="chip">Crisis Management</span>
+            <span class="chip">Team Collaboration</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><span class="n mono">09</span><h2>Languages</h2></div>
+        <div class="langs">
+          <div class="l"><div class="k">Arabic</div><div class="v">Native</div></div>
+          <div class="l"><div class="k">English</div><div class="v">Very Good — reading, writing, speaking</div></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="sec-head"><span class="n mono">10</span><h2>Availability</h2></div>
+        <p class="avail">
+          Available for <b>training programs and academic engagements across the GCC / Gulf region</b>,
+          delivered online or onsite with full scheduling flexibility.
+        </p>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section>
+        <div class="sec-head"><span class="n mono">11</span><h2>Certifications</h2></div>
+        <ul class="bul">
+          <li>Certified Trainer — National Institute of Management, Ministry of Planning.</li>
+          <li>Training of Trainers (TOT) — Egabi Learn.</li>
+          <li>Quality Management Systems (ISO, Six Sigma) — Ain Shams University.</li>
+          <li>Strategic Studies &amp; National Security; Crisis Management — Nasser Higher Military Academy.</li>
+          <li>Effective Teaching in Higher Education Institutions — NAQAAE.</li>
+          <li>External Review Course — NAQAAE.</li>
+          <li>HR Management · Marketing Basics · Communication Skills — UP Skill Center.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-head"><span class="n mono">12</span><h2>Conferences&nbsp;&amp;&nbsp;Workshops</h2></div>
+        <ul class="bul">
+          <li>Toward an Accredited University 2025 — Ain Shams University.</li>
+          <li>Egyptian Academic Conference — Al Nahda University.</li>
+          <li>Crisis Management in Universities — Thebes Academy.</li>
+          <li>Academic Quality Standards — Thebes Academy.</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="sec-head"><span class="n mono">13</span><h2>Awards</h2></div>
+        <ul class="bul">
+          <li>1st Place — Ministry of Higher Education "Information League" Competition.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Dr. Hafez Mohamed Farid · Curriculum Vitae</span>
+    <span>hafezkhalaf@gmail.com · orcid.org/0000-0002-9057-7545</span>
+  </div>
+
+</div>
+</body>
+</html>

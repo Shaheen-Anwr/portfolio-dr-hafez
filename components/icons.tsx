@@ -146,6 +146,13 @@ export const IconPrinter = (p: IconProps) => (
   </svg>
 );
 
+export const IconDownload = (p: IconProps) => (
+  <svg {...base(p)}>
+    <path d="M12 3v12m0 0 4-4m-4 4-4-4" />
+    <path d="M5 21h14" />
+  </svg>
+);
+
 export const IconBriefcase = (p: IconProps) => (
   <svg {...base(p)}>
     <rect x="3" y="7" width="18" height="13" rx="2" />

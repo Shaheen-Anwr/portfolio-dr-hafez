@@ -8,7 +8,10 @@ import { useActiveSection, useScrollLock } from "@/lib/hooks";
 import { cn } from "@/lib/cn";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { BrandMark } from "@/components/ui/Brand";
-import { IconGlobe, IconMenu, IconPrinter, IconX } from "@/components/icons";
+import { IconDownload, IconGlobe, IconMenu, IconX } from "@/components/icons";
+
+const CV_FILE = "/Dr-Hafez-Farid-CV.pdf";
+const CV_DOWNLOAD_NAME = "Dr-Hafez-Mohamed-Farid-CV.pdf";
 
 const SECTION_IDS = navItems.map((n) => n.id);
 
@@ -100,14 +103,14 @@ export function Header() {
         <div className="hidden items-center gap-2 md:flex">
           <LangToggle />
           <Magnetic strength={0.25}>
-            <button
-              type="button"
-              onClick={() => window.print()}
+            <a
+              href={CV_FILE}
+              download={CV_DOWNLOAD_NAME}
               className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-bg transition-transform hover:scale-[1.02] active:scale-95"
             >
-              <IconPrinter className="h-4 w-4" />
+              <IconDownload className="h-4 w-4" />
               {t.downloadCv}
-            </button>
+            </a>
           </Magnetic>
         </div>
 
@@ -169,17 +172,15 @@ export function Header() {
             </nav>
             <div className="flex items-center gap-3 px-6 pb-10">
               <LangToggle />
-              <button
-                type="button"
-                onClick={() => {
-                  setOpen(false);
-                  setTimeout(() => window.print(), 200);
-                }}
+              <a
+                href={CV_FILE}
+                download={CV_DOWNLOAD_NAME}
+                onClick={() => setOpen(false)}
                 className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-bg"
               >
-                <IconPrinter className="h-4 w-4" />
+                <IconDownload className="h-4 w-4" />
                 {t.downloadCv}
-              </button>
+              </a>
             </div>
           </motion.div>
         ) : null}
